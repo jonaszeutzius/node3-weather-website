@@ -49,12 +49,14 @@ app.get('/weather', (req, res) => {
         })
     }
 
+    units = req.query.units
     geocode(req.query.address, (error, {latitude, longitude, region, country, location} = {}) => {
         if (error) {
             return res.send({ error })
         } 
+        
 
-        forecast(latitude, longitude, (error, forecastData) => {
+        forecast(latitude, longitude, units, (error, forecastData) => {
             if (error) {
                 return res.send({ error })
             }
