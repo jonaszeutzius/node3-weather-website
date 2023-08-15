@@ -36,7 +36,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'Literally just choose units and type a city name bozo',
+        helpText: 'Choose units and type city name to access weather report',
         title: 'Help',
         name: 'Jonas Zeutzius'
     })
